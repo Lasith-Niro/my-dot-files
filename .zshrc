@@ -170,3 +170,16 @@ pyclean () {
 myip() {
 	ifconfig enp3s0 | grep 'inet addr:' | cut -d: -f2| awk '{ print $1}'
 }
+
+vimclean () {
+        rm -rf .ropeproject
+
+}
+
+
+ANDROID_HOME="/mnt/0A5226BE5226ADFF/Ubuntu/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export PATH=${JAVA_HOME}/bin:${PATH}
+
