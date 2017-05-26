@@ -95,7 +95,7 @@ alias d='cd'
 
 plugins=(git rails rails3 ruby capistrano bundler heroku rake rvm autojump command-not-found python pip github gnu-utils history-substring-search zsh-syntax-highlighting)
 
-
+#Aliases
 alias la='ls -A'
 alias l='ls -CF'
 alias d='cd'
@@ -103,10 +103,15 @@ alias lear='clear'
 alias var='cd /var/www/htdocs'
 alias dr='cd /mnt/662BB9E569E07D44/Research/Implementation/Codes'
 alias halflife='cd /mnt/783A8DB93A8D74C2/HalfLife'
-alias gotoxv6='cd ~/Desktop/4Y1S/2017/SCS\ 4107\ Operating\ Systems\ 02/xv6_mit/xv6-public'
+alias gotoxv6='cd ~/Desktop/4Y1S/SCS\ 4107\ Operating\ Systems\ 02/xv6_mit/xv6-public'
 alias aca='cd ~/Desktop/4Y1S/2017'
+alias gsoc='cd ~/Desktop/GSOC-17/github/D4D---Drone-4-Dengue'
 # List only directories
 alias lsd='ls -l | grep "^d"'
+alias dog='cat'
+alias rm='~/bashscripts/myScripts/rm-to-mv.sh'
+alias cpwd='pwd|xclip -selection clipboard'
+
 
 
 if [ "$color_prompt" = yes ]; then
@@ -163,6 +168,8 @@ setopt prompt_subst
 PS1='%n@%m $(shrink_path -f)>'
 
 pyclean () {
+        find . -type f -name "*.py[co]"
+        find . -type d -name "__pycache__"
         find . -type f -name "*.py[co]" -delete
         find . -type d -name "__pycache__" -delete
 }
@@ -172,14 +179,24 @@ myip() {
 }
 
 vimclean () {
-        rm -rf .ropeproject
-
+		find . -type f -name "tags"
+		find . -type d -name ".ropeproject"
+		find . -type f -name "tags"
+		echo "Start deleting..."
+		find . -type f -name "tags" -delete
+		find . -name ".ropeproject" -type d -exec rm -r "{}" \;
+		find . -type f -name "tags" -delete
 }
 
+backupdot () {
+	cp ~/.zshrc ~/my-dot-files
+	cp ~/.bashrc ~/my-dot-files
+	cp ~/.vimrc ~/my-dot-files
+	cp ~/.xprofile ~/my-dot-files
+}
 
 ANDROID_HOME="/mnt/0A5226BE5226ADFF/Ubuntu/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 export PATH=${JAVA_HOME}/bin:${PATH}
-
