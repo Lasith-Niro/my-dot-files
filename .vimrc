@@ -285,3 +285,6 @@ endfunc
 map <F7> :call Debug()<CR>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+
+set ttyfast
+set lazyredraw

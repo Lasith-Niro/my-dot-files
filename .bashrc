@@ -101,7 +101,7 @@ alias dr='cd /mnt/662BB9E569E07D44/Research/Implementation/Codes'
 alias halflife='cd /mnt/783A8DB93A8D74C2/HalfLife'
 alias gotoxv6='cd ~/Desktop/4Y1S/2017/SCS\ 4107\ Operating\ Systems\ 02/xv6_mit/xv6-public'
 alias 2017='cd ~/Desktop/4Y1S/2017'
-
+alias ls='colorls'
 
 
 # List only directories
@@ -132,3 +132,5 @@ fi
 
 ANDROID_HOME="/mnt/0A5226BE5226ADFF/Ubuntu/Android/Sdk"
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+# export PATH=/home/lasithniro/.nvm/versions/node/v9.3.0/lib/node_modules:{$PATH}
